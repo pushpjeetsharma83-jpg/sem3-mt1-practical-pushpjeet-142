@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Manager</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <p class="eyebrow">COURSE MANAGEMENT</p>
+      <h1>Course Manager</h1>
+      <p class="subtitle">Add and manage your department courses.</p>
+    </header>
+
+    <section class="panel" aria-labelledby="add-course-title">
+      <h2 id="add-course-title">Add a course</h2>
+      <form id="course-form">
+        <label>
+          Course ID
+          <input name="courseId" type="text" placeholder="e.g. 101" maxlength="30" required>
+        </label>
+        <label>
+          Course name
+          <input name="courseName" type="text" placeholder="e.g. Web Development" maxlength="100" required>
+        </label>
+        <label>
+          Course code
+          <input name="courseCode" type="text" placeholder="e.g. WEB101" maxlength="30" required>
+        </label>
+        <label>
+          Department
+          <input name="department" type="text" placeholder="e.g. Computer Science" maxlength="100" required>
+        </label>
+        <button type="submit">Add course</button>
+      </form>
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="panel" aria-labelledby="course-list-title">
+      <div class="list-heading">
+        <div>
+          <h2 id="course-list-title">Courses</h2>
+          <p class="subtitle">Your saved courses appear here.</p>
+        </div>
+        <span id="course-count" class="count">0 courses</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Course ID</th>
+              <th scope="col">Course name</th>
+              <th scope="col">Course code</th>
+              <th scope="col">Department</th>
+              <th scope="col"><span class="visually-hidden">Actions</span></th>
+            </tr>
+          </thead>
+          <tbody id="course-list"></tbody>
+        </table>
+      </div>
+      <p id="empty-state" class="empty-state">No courses yet. Add your first course above.</p>
+    </section>
+  </main>
+</body>
+</html>
